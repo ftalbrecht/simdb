@@ -252,6 +252,11 @@ def add_stop_times(*keys):
         stop.append(now)
 
 
+def add_logfile(filename):
+    with open(filename, 'r') as logfile:
+        add_values(log=logfile.read())
+
+
 def flush():
     if not _current_dataset:
         raise ValueError('no data set created')
